@@ -13,13 +13,13 @@ const mongoose = require('mongoose');
  * Get port from environment and store in Express.
  */
 
-var port = normalizePort(process.env.PORT || '3000');
+var port = normalizePort(process.env.PORT || '43010');
 app.set('port', port);
 
 /**
  * Create HTTP server.
  */
- main().then(()=> console.log("contenctado")).catch(err => console.log(err));
+ main().then(()=> console.log("conectado")).catch(err => console.log(err));
 
  async function main() {
   mongoose.connect('mongodb+srv://dblab15:Dblab15@cluster0.fdp2h.mongodb.net/dblab?retryWrites=true&w=majority')
