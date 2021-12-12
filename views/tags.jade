@@ -1,0 +1,21 @@
+extends layout
+
+block content
+  .row(style="text-align:center;")
+    h1= title
+  .row.contenido.justify-content-center
+    .col-md-3 
+      .row.sidebar-tags
+        h3 Tags
+        each item in tags 
+          a(href="/tag/#{item}")= item
+    .col-md-9
+      .row
+        each item in blogs 
+          .card(style='width: 18rem;')
+            img.card-img-top(src='#{item.img}')
+            .card-body
+              h5.card-title #{item.titulo}
+              p.card-text
+                | #{item.descripcion}
+              a.btn.btn-primary(href='/blog/#{item.slug}') Ver Completo

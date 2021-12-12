@@ -3,7 +3,26 @@ extends layout
 block content
   .row(style="text-align:center;")
     h1= title
+  #carouselExampleControls.carousel.slide(data-bs-ride='carousel')
+    .carousel-inner
+      .carousel-item.active
+        img.d-block.w-100(src='/images/slider1.png' alt='...')
+      .carousel-item
+        img.d-block.w-100(src='/images/slider2.png' alt='...')
+      .carousel-item
+        img.d-block.w-100(src='/images/slider3.png' alt='...')
+    button.carousel-control-prev(type='button' data-bs-target='#carouselExampleControls' data-bs-slide='prev')
+      span.carousel-control-prev-icon(aria-hidden='true')
+      span.visually-hidden Previous
+    button.carousel-control-next(type='button' data-bs-target='#carouselExampleControls' data-bs-slide='next')
+      span.carousel-control-next-icon(aria-hidden='true')
+      span.visually-hidden Next
   .row.contenido.justify-content-center
+    .col-md-3 
+      .row.sidebar-tags
+        h3 Tags
+        each item in tags 
+          a(href="/tag/#{item}")= item
     .col-md-9
       .row
         each item in blogs 

@@ -8,6 +8,7 @@ const blogSchema = new Schema({
   slug: String,
   autor: String,
   img: String,
+  tag: String,
 });
 
 const Blog = mongoose.model('Blog',blogSchema);

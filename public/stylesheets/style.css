@@ -18,3 +18,17 @@ a {
   margin-right: 10px;
   margin-top: 10px;
 }
+.sidebar-tags{
+  text-align: center;
+}
+.sidebar-tags a{
+  text-decoration: none;
+  background-color: #363636;
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 10px;
+}
+.sidebar-tags a:hover{
+  background-color: #00B7FF;
+  color: #363636;
+}
