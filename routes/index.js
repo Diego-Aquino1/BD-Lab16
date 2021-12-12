@@ -18,7 +18,8 @@ router.get('/blog/:slug', async function(req, res, next) {
   try{
     const arrayBlogs = await Blog.find();
     const content = await Blog.find({ slug: req.params.slug }).exec();
-    res.render('items', { title:content[0].titulo,blogs:arrayBlogs,contenido:content[0] });
+    const dataTags = await Tag.find();
+    res.render('items', { title:content[0].titulo,blogs:arrayBlogs,contenido:content[0],tags:dataTags[0].tags });
   } catch(e){
     console.error("error obteniendo documentos",e);
     res.redirect("/");

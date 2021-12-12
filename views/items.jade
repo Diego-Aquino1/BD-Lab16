@@ -12,7 +12,11 @@ block content
           i= contenido.autor
     
     .col-md-3
-      .row
+      .row.sidebar-tags
+        h3 Tags
+        each item in tags 
+          a(href="/tag/#{item}")= item
+      .row.mt-4
         each item in blogs 
           .card(style='width: 18rem;')
             img.card-img-top(src='#{item.img}')
